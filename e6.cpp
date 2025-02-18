@@ -1,101 +1,82 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
 using namespace std;
 
-class Vec{
-    private:
-        double* v;
-        int len;
-    public:
-    // bulid new
-        Vec(int length, double* valuse = nullptr) : len(length){
-            v = new double [len];
-            if(valuse){
-                for(int i = 0; i < len; i++){
-                    v[i] = valuse[i];
-                }
-            }else {
-                for (int i = 0; i < len; i++) {
-                    v[i] = 0.0;
-                }
-            }
-        }
-    //bulid new
-        Vec(const Vec& other) : len(other.len) {
-            v = new double[len];
-            for (int i = 0; i < len; ++i) {
-                v[i] = other.v[i];
-            }
-        }
-        //delet new
-        ~Vec() {
-            delete[] v;
-        }
-
-        void set(double arg, int num) {
-            if (num >= 0 && num < len) {
-                v[num] = arg;
-            }
-        }
-
-        double get(int num) const {
-            if (num >= 0 && num < len) {
-                return v[num];
-            }
-            return 0.0;
-        }
-
-        double euc_norm() const {
-            double sum = 0.0;
-            for (int i = 0; i < len; i++) {
-                sum += v[i] * v[i];
-            }
-            return sqrt(sum);
-        }
-
-        double max_norm() const {
-            double max = 0.0;
-            for (int i = 0; i < len; i++) {
-                if (abs(v[i]) > max) {
-                    max = abs(v[i]);
-                }
-            }
-            return max;
-        }
-
-        void print() const {
-            cout << "(";
-            for (int i = 0; i < len; i++) {
-                double value = v[i];
-                if (value == value) {
-                    cout << value; 
-                } else {
-                    cout << value; 
-                }
-                if (i < len - 1) {
-                    cout << ",";
-                }
-            }
-            cout << ")" << endl;
-        }
+class Complex
+{
+	public:
+		Complex(double arg_re = 0, double arg_im = 0)
+		{
+			re=arg_re;
+			im=arg_im;
+		}
+/*
+		Complex(double arg_re)
+		{
+			re=arg_re;
+			im=0.;
+		}
+		Complex()
+		{
+			re=0.;
+			im=0.;
+		}
+*/
+		Complex(const Complex& other)
+		{
+			re = other.re;
+			im = other.im;
+		}
+		void print() const
+		{
+			cout << re << "+" << im << "i" << endl;
+		}
+		double modulo() const
+		{
+			return sqrt(re*re+im*im);
+		}
+		double argument() const
+		{
+			return atan2(im,re);
+		}
+		double get_re() const {return re;}
+		double get_im() const {return im;}
+		~Complex(){}
+	private:
+		double re;
+		double im;
 };
 
-/*int main(void)
+double pow2(Complex* z) //pointer
 {
-    double y1[3] = {1,2,3};
-    double y2[5] = {2,1,0,5,7};
-    Vec x(3, y1), y(5, y2), z(4);
-    Vec u = x;
+	return z->get_re()*z->get_re() + z->get_im()*z->get_im();
+}
 
-    y.print();
-    x.print();
-    z.print();
-    u.print();
+double pow2(const Complex & z) //ref
+{
+    return z.get_re()*z.get_re() + z.get_im()*z.get_im();
+}
 
-    x.set(23, 2);  u.set(34, 1);  z.set(-3, 3);
-    cout << "x[2] = " << x.get(2) << endl;
-    cout << "u[1] = " << u.get(1) << endl;
-    cout << "euc_norma y: " << y.euc_norm() << endl;
-    cout << "max_norma z: " << z.max_norm() << endl;
-    return 0;
+/*
+double pow2(Complex z) //copy
+{
+	return z.get_re()*z.get_re() + z.get_im()*z.get_im();
+}
+*/
+/*
+int main()
+{
+	Complex z(3,5);
+	Complex z1(6);
+	Complex z2;
+
+	//z.re = 5; z.im = 3;//
+	z.print();
+	z1.print();
+	z2.print();
+	cout << "|z| = " << z.modulo() << endl;
+	cout << " pow2(z) " << pow2(z) << endl;
+//	cout << " pow2(8) " << pow2(8.) << endl;
+	return 0;
+
 }*/
