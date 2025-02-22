@@ -56,17 +56,26 @@ int main(){
     unsigned long num = 0 ;
     int n;
 
-    cin >> type;
+    cin.getline(type, 10);
+    
     if(strcmp(type, "string") == 0){
-        cin >> input;
+
+        cin.getline(input, 100);
         cin >> n;
         char* result = letf(input, n);
-        cout << result << endl;
-        delete result;
+        if(result){
+            cout << result << endl;
+            delete[] result;
+        }
+
     }else if(strcmp(type, "number") == 0){
+
         cin >> num;
         cin >> n;
         unsigned long result = letf(num, n);
         cout << result << endl;
+
     }
+
+    return 0;
 }
