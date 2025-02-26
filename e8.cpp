@@ -7,7 +7,9 @@ class mstring{
         char* data;
         int size;
     public:
-        mstring() :data(NULL), size(0){// ctr
+        mstring() : size(0){// ctr
+            data = new char[1];
+            data[0] = '\0';
         }
 
         mstring(const mstring& other) {// copy ctr
@@ -88,6 +90,7 @@ class mstring{
             data = newData;
             size--;
         }
+
         void del(int i, int j){ // delete string
             if (i < 0 || j >= size || i > j) return;
 
@@ -99,12 +102,32 @@ class mstring{
             size -= (j - i + 1);
         }
 
-        int search(const char* str){ // serch son string
-            const char* found = strstr(data, str);
-            if (found) {
-                return found - data;
+        int search(const char* str) { // search substring
+            if (str == nullptr || *str == '\0') return -1;
+        
+            int zlength = size;
+            int sonLength = strlen(str);
+        
+            if (sonLength > zlength) return -1;
+        
+            for (int i = 0; i <= zlength - sonLength; i++) {
+
+                int j;
+
+                for (j = 0; j < sonLength; j++) {
+                    if (data[i + j] != str[j]) {
+                        break;
+                    }
+                }
+
+                if (j == sonLength) { 
+                    return i; 
+                }
+
             }
-            return -1;
+
+            return -1; 
+
         }
 
         void print(){
@@ -112,7 +135,7 @@ class mstring{
         }
 };
 
-int main()
+/*int main()
 {
         mstring s ("hello world");
         mstring s1 = s;
@@ -121,7 +144,7 @@ int main()
         if (s2.isempty())
         {
           s.add('!');
-          s2.add("HI!");
+          s2.add("Hl!");
           s.print();
           s2.print();
         }
@@ -141,4 +164,4 @@ int main()
         cout << s.search("my") << endl;
         cout << s2.search("my") << endl;
         return 0;
-}
+}*/
