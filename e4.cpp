@@ -22,19 +22,19 @@ class Vector_3d{
             return max(max(abs(x), abs(y)), abs(z));
         }
 
-        double get_x(){
+        double get_x() const{
             return x;
         }
 
-        double get_y(){
+        double get_y() const{
             return y;
         }
 
-        double get_z(){
+        double get_z() const{
             return z;
         }
 
-        void print(){
+        void print() const {
             cout << "(" << x << "," << y << "," << z << ")" << endl;
         }
 

@@ -6,7 +6,7 @@ class Quotient{
         int num1;
         unsigned  num2;
 
-        int gcd(int a, unsigned  b){
+        int gcd(int a, unsigned  b) const {
             while (b != 0){
                 int temp = b;
                 b = abs(a) % b;
@@ -50,7 +50,7 @@ class Quotient{
             yue();
         }
 
-        void print() {
+        void print() const {
             if (num2 == 1) {
                 cout << num1 << endl;
             } else {
