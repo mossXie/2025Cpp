@@ -1,0 +1,17 @@
+F:\oj\kp\kp\bin\Debug\net8.0-windows\kp.exe
+F:\oj\kp\kp\bin\Debug\net8.0-windows\kp.deps.json
+F:\oj\kp\kp\bin\Debug\net8.0-windows\kp.runtimeconfig.json
+F:\oj\kp\kp\bin\Debug\net8.0-windows\kp.dll
+F:\oj\kp\kp\bin\Debug\net8.0-windows\kp.pdb
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.Form1.resources
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.Properties.Resources.resources
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.csproj.GenerateResource.cache
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.GeneratedMSBuildEditorConfig.editorconfig
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.AssemblyInfoInputs.cache
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.AssemblyInfo.cs
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.csproj.CoreCompileInputs.cache
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.dll
+F:\oj\kp\kp\obj\Debug\net8.0-windows\refint\kp.dll
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.pdb
+F:\oj\kp\kp\obj\Debug\net8.0-windows\kp.genruntimeconfig.cache
+F:\oj\kp\kp\obj\Debug\net8.0-windows\ref\kp.dll
